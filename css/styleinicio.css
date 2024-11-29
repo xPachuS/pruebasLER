@@ -7,24 +7,6 @@ html, body {
     text-align: center;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-body a {
-    color: inherit; /* Hereda el color del texto de su contenedor */
-    text-decoration: none; /* Elimina la subrayado predeterminado */
-}
-
-.row {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas si es necesario */
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-}
-
 .card-flip {
     perspective: 1000px;
     width: 18rem;
