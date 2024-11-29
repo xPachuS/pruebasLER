@@ -1,12 +1,3 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
 .card-flip {
     perspective: 1000px;
     width: 18rem;
