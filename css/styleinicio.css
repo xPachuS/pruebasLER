@@ -21,4 +21,51 @@ body a {
 .row {
     display: flex;
     gap: 14px;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas si es necesario */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+}
+
+.card-flip {
+    perspective: 1000px;
+    width: 18rem;
+    margin-bottom: 20px; /* Añadido espacio entre las tarjetas */
+}
+
+.card-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-flip:hover .card-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.card-front {
+    background-color: #f8f9fa;
+}
+
+.card-back {
+    background-color: #007bff;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-back .btn {
+    background-color: #fff;
+    color: #007bff;
 }
