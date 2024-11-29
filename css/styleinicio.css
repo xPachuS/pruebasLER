@@ -19,7 +19,7 @@ html, body {
 .row {
     display: flex;
     flex-wrap: wrap; /* Asegura que las tarjetas se ajusten a múltiples filas */
-    gap: 10px;
+    gap: 8px;
     justify-content: center; /* Centra las tarjetas dentro de las filas */
 }
 
@@ -34,7 +34,7 @@ html, body {
 /* Tarjetas */
 .card-flip {
     width: 18rem; /* Establece el ancho fijo de la tarjeta */
-    height: 12rem; /* Establece la altura fija de la tarjeta */
+    height: 13rem; /* Establece la altura fija de la tarjeta */
     perspective: 1000px;
     margin-bottom: 20px;
 }
