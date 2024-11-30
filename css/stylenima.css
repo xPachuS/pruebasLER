@@ -16,6 +16,12 @@ body a {
     padding-top: 50px;
 }
 
+img {
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+}
+
 /* Filas */
 .row {
     display: flex;
