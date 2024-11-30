@@ -118,7 +118,7 @@ body a {
 /* Define la fuente personalizada */
 @font-face {
     font-family: 'Nature';
-    src: url('nature.ttf') format('truetype');
+    src: url('../font/nature.ttf') format('truetype');
 }
 
 /* Clase para aplicar la fuente */
