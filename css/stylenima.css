@@ -124,7 +124,7 @@ img {
 /* Define la fuente personalizada */
 @font-face {
     font-family: 'Nature';
-    src: url('../font/nature.ttf') format('truetype');
+    src: url('../font/nature.otf') format('truetype');
 }
 
 /* Clase para aplicar la fuente */
