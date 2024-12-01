@@ -43,7 +43,7 @@ cardsData.forEach((card, index) => {
                     </div>
                     <div class="card-back">
                         <p>${card.description}</p>
-                        <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#${uniqueId}">CONSULTEU NIMA</button>
+                        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#${uniqueId}">CONSULTEU NIMA</button>
                     </div>
                 </div>
             </div>
