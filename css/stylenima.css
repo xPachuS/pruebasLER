@@ -39,8 +39,8 @@ img {
 
 /* Tarjetas */
 .card-flip {
-    width: 18rem; /* Establece el ancho fijo de la tarjeta */
-    height: 11rem; /* Establece la altura fija de la tarjeta */
+    width: 17rem; /* Establece el ancho fijo de la tarjeta */
+    height: 10rem; /* Establece la altura fija de la tarjeta */
     perspective: 1000px;
     margin-bottom: 20px;
 }
