@@ -1,3 +1,4 @@
+// Data for cards
 const cardsData = [
     { title: "Andalucía", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://www.juntadeandalucia.es/medioambiente/sira-buscador-publico/' target='_blank'>aquí</a>.", modalId: "modal1", iframeSrc: "https://www.juntadeandalucia.es/medioambiente/sira-buscador-publico/", backgroundImage: "../img/andalucia.png" },
     { title: "Aragón", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://aplicaciones2.aragon.es/pdr/pdr_pub/residuos/informacionAmbiental/busquedaNimas' target='_blank'>aquí</a>.", modalId: "modal2", iframeSrc: "https://aplicaciones2.aragon.es/pdr/pdr_pub/residuos/informacionAmbiental/busquedaNimas", backgroundImage: "../img/aragon.png" },
@@ -19,12 +20,22 @@ const cardsData = [
     { title: "País Vasco", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://www.euskadi.eus/informacion/registro-de-produccion-y-gestion-de-residuos/web01-a2inghon/es/' target='_blank'>aquí</a>.", modalId: "modal18", iframeSrc: "https://www.euskadi.eus/informacion/registro-de-produccion-y-gestion-de-residuos/web01-a2inghon/es/", backgroundImage: "../img/paisvasco.png"  },
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
-    const cardsContainer = document.getElementById("cards-container");
+const cardsContainer = document.getElementById("cards-container");
+const modalsContainer = document.getElementById("modals-container");
 
-    // Genera el HTML de cada tarjeta
-    const generateCardHTML = (card, uniqueId) => `
-        <div class="col-md-4 mb-3">
+let currentRow;
+
+// Generate cards and modals
+cardsData.forEach((card, index) => {
+    if (index % 3 === 0) {
+        currentRow = document.createElement('div');
+        currentRow.className = 'row';
+        cardsContainer.appendChild(currentRow);
+    }
+
+    const uniqueId = `${card.modalId}_${index}`;
+    currentRow.innerHTML += `
+        <div class="col-md-4">
             <div class="card-flip">
                 <div class="card-flip-inner">
                     <div class="card-front" style="background-image: url('${card.backgroundImage}');">
@@ -37,37 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="${uniqueId}" tabindex="-1" aria-hidden="true">
+    `;
+
+    modalsContainer.innerHTML += `
+        <div class="modal fade" id="${uniqueId}" tabindex="-1" aria-labelledby="${uniqueId}Label" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">${card.title}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        <h5 class="modal-title" id="${uniqueId}Label">${card.title}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
-                        <iframe data-src="${card.iframeSrc}" width="100%" height="500" loading="lazy"></iframe>
+                        <iframe src="${card.iframeSrc}" width="100%" height="500px"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     `;
-
-    // Genera y agrega las tarjetas al contenedor
-    let allCardsHTML = "";
-    cardsData.forEach((card, index) => {
-        const uniqueId = `${card.modalId}_${index}`;
-        allCardsHTML += generateCardHTML(card, uniqueId);
-    });
-    cardsContainer.innerHTML = allCardsHTML;
-
-    // Cargar iframe solo al abrir el modal
-    document.querySelectorAll('.modal').forEach(modal => {
-        modal.addEventListener('show.bs.modal', (event) => {
-            const iframe = event.target.querySelector("iframe");
-            if (iframe && !iframe.src) {
-                iframe.src = iframe.dataset.src;
-            }
-        });
-    });
 });
-
