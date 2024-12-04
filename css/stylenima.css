@@ -79,7 +79,7 @@ img {
 }
 
 .card-back {
-    background-color: #fff;
+    background: #fff;
     color: #000;
     transform: rotateY(180deg);
 }
