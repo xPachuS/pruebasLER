@@ -3,8 +3,8 @@ html, body {
     height: 100%;
     margin: 0;
     display: flex;
-    justify-content: center; /* Centra el contenido en el eje horizontal */
-    align-items: center; /* Centra el contenido en el eje vertical */
+    justify-content: center;
+    align-items: center;
     background-color: #f8f9fa;
 }
 
@@ -18,23 +18,22 @@ html, body {
 /* Filas */
 .row {
     display: flex;
-    flex-wrap: wrap; /* Asegura que las tarjetas se ajusten a múltiples filas */
-    gap: 0px;
-    justify-content: center; /* Centra las tarjetas dentro de las filas */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Columna con tarjetas */
 .col-md-4 {
     display: flex;
-    justify-content: center; /* Centra las tarjetas en cada columna */
-    flex: 1 1 calc(33.333% - 20px); /* 3 tarjetas por fila */
-    max-width: 300px; /* Limita el ancho máximo de cada tarjeta */
+    justify-content: center;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 300px;
 }
 
 /* Tarjetas */
 .card-flip {
-    width: 17rem; /* Establece el ancho fijo de la tarjeta */
-    height: 12rem; /* Establece la altura fija de la tarjeta */
+    width: 17rem;
+    height: 12rem;
     perspective: 1000px;
     margin-bottom: 20px;
 }
@@ -81,10 +80,4 @@ html, body {
     border-radius: 20px;
     padding: 8px 16px;
     font-weight: bold;
-}
-
-/* Define la fuente personalizada */
-@font-face {
-    font-family: 'Nature';
-    src: url('./font/nature.otf') format('truetype');
 }
