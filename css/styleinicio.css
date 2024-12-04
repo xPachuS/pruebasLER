@@ -6,6 +6,7 @@ html, body {
     justify-content: center; /* Centra el contenido en el eje horizontal */
     align-items: center; /* Centra el contenido en el eje vertical */
     background-color: #f8f9fa;
+    font-family: 'Nature', sans-serif;
 }
 
 /* Contenedor */
@@ -77,7 +78,7 @@ html, body {
 
 .card-back .btn {
     background-color: #fff;
-    color: #000;
+    color: #6c757d;
     border-radius: 20px;
     padding: 8px 16px;
     font-weight: bold;
@@ -87,14 +88,4 @@ html, body {
 @font-face {
     font-family: 'Nature';
     src: url('./font/nature.otf') format('truetype');
-}
-
-/* Clase para aplicar la fuente */
-.card-title {
-    font-family: 'Nature', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin: 20px 0;
-    color: #000;
 }
