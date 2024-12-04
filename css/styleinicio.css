@@ -34,7 +34,7 @@ html, body {
 /* Tarjetas */
 .card-flip {
     width: 18rem; /* Establece el ancho fijo de la tarjeta */
-    height: 18rem; /* Establece la altura fija de la tarjeta */
+    height: 13rem; /* Establece la altura fija de la tarjeta */
     perspective: 1000px;
     margin-bottom: 20px;
 }
