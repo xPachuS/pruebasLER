@@ -22,21 +22,19 @@ img {
     margin-right: 10px;
 }
 
-/* Contenedor para las filas */
+/* Filas */
 .row {
     display: flex;
-    flex-wrap: wrap; /* Permite que las tarjetas bajen a nuevas filas si es necesario */
-    justify-content: center; /* Centra el contenido en la fila */
-    gap: 20px; /* Espaciado entre tarjetas */
+    flex-wrap: wrap; /* Asegura que las tarjetas se ajusten a múltiples filas */
+    justify-content: center; /* Centra las tarjetas dentro de las filas */
 }
 
 /* Columna con tarjetas */
 .col-md-4 {
-    flex: 1 1 calc(33.333% - 20px); /* Cada tarjeta ocupa un tercio menos el espacio del gap */
-    max-width: calc(33.333% - 20px); /* Limita el ancho máximo */
     display: flex;
-    justify-content: center; /* Centra la tarjeta en su columna */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    justify-content: center; /* Centra las tarjetas en cada columna */
+    flex: 1 1 calc(33.333% - 20px); /* 3 tarjetas por fila */
+    max-width: 300px; /* Limita el ancho máximo de cada tarjeta */
 }
 
 /* Tarjetas */
