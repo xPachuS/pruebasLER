@@ -1,6 +1,5 @@
 // Data for cards
-const cardsData =[
-
+const cardsData = [
     { title: "Andalucía", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://www.juntadeandalucia.es/medioambiente/sira-buscador-publico/' target='_blank'>aquí</a>.", modalId: "modal1", iframeSrc: "https://www.juntadeandalucia.es/medioambiente/sira-buscador-publico/", backgroundImage: "../img/andalucia.png" },
     { title: "Aragón", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://aplicaciones2.aragon.es/pdr/pdr_pub/residuos/informacionAmbiental/busquedaNimas' target='_blank'>aquí</a>.", modalId: "modal2", iframeSrc: "https://aplicaciones2.aragon.es/pdr/pdr_pub/residuos/informacionAmbiental/busquedaNimas", backgroundImage: "../img/aragon.png" },
     { title: "Asturias", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://www.medioambiente.asturias.org/IASERVICIORESIDUOS/Buscar/BuscarInstalacion' target='_blank'>aquí</a>.", modalId: "modal3", iframeSrc: "https://www.medioambiente.asturias.org/IASERVICIORESIDUOS/Buscar/BuscarInstalacion", backgroundImage: "../img/asturias.png"  },
@@ -29,11 +28,9 @@ let currentRow;
 // Generate cards and modals
 cardsData.forEach((card, index) => {
     if (index % 3 === 0) {
-        if(!currentRow){
-            currentRow = document.createElement('div');
-            currentRow.className = 'row';
-            cardsContainer.appendChild(currentRow);
-        }
+        currentRow = document.createElement('div');
+        currentRow.className = 'row';
+        cardsContainer.appendChild(currentRow);
     }
 
     const uniqueId = `${card.modalId}_${index}`;
@@ -69,4 +66,3 @@ cardsData.forEach((card, index) => {
         </div>
     `;
 });
-
