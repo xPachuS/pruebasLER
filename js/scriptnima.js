@@ -33,8 +33,8 @@ cardsData.forEach((card, index) => {
         cardsContainer.appendChild(currentRow);
     }
 
-    const uniqueId = ${card.modalId}_${index};
-    currentRow.innerHTML += 
+    const uniqueId = `${card.modalId}_${index}`;
+    currentRow.innerHTML += `
         <div class="col-md-4">
             <div class="card-flip">
                 <div class="card-flip-inner">
@@ -48,9 +48,9 @@ cardsData.forEach((card, index) => {
                 </div>
             </div>
         </div>
-    ;
+    `;
 
-    modalsContainer.innerHTML += 
+    modalsContainer.innerHTML += `
         <div class="modal fade" id="${uniqueId}" tabindex="-1" aria-labelledby="${uniqueId}Label" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -59,10 +59,30 @@ cardsData.forEach((card, index) => {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
-                        <iframe src="${card.iframeSrc}" width="100%" height="500px"></iframe>
+                        <iframe data-src="${card.iframeSrc}" width="100%" height="500px" style="display: none;"></iframe>
                     </div>
                 </div>
             </div>
         </div>
-    ;
+    `;
+});
+
+// Lazy load iframe when modal is opened
+document.addEventListener('shown.bs.modal', (event) => {
+    const modal = event.target;
+    const iframe = modal.querySelector('iframe');
+    if (iframe && iframe.style.display === 'none') {
+        iframe.src = iframe.getAttribute('data-src');
+        iframe.style.display = 'block';
+    }
+});
+
+// Optionally clear iframe when modal is closed
+document.addEventListener('hidden.bs.modal', (event) => {
+    const modal = event.target;
+    const iframe = modal.querySelector('iframe');
+    if (iframe) {
+        iframe.src = '';
+        iframe.style.display = 'none';
+    }
 });
