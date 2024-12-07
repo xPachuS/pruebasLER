@@ -1,6 +1,6 @@
 // Data for cards
 const cardsData = [
-    { title: "Andalucía", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://acortar.link/9GRp4J' target='_blank'>aquí</a>.", modalId: "modal1", iframeSrc: "https://acortar.link/9GRp4J", backgroundImage: "../img/andalucia.jpg" },
+    { title: "Andalucía", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://www.juntadeandalucia.es/medioambiente/sira-buscador-publico/' target='_blank'>aquí</a>.", modalId: "modal1", iframeSrc: "https://www.juntadeandalucia.es/medioambiente/sira-buscador-publico/", backgroundImage: "../img/andalucia.jpg" },
     { title: "Aragón", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://aplicaciones2.aragon.es/pdr/pdr_pub/residuos/informacionAmbiental/busquedaNimas' target='_blank'>aquí</a>.", modalId: "modal2", iframeSrc: "https://aplicaciones2.aragon.es/pdr/pdr_pub/residuos/informacionAmbiental/busquedaNimas", backgroundImage: "../img/aragon.jpg" },
     { title: "Asturias", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://www.medioambiente.asturias.org/IASERVICIORESIDUOS/Buscar/BuscarInstalacion' target='_blank'>aquí</a>.", modalId: "modal3", iframeSrc: "https://www.medioambiente.asturias.org/IASERVICIORESIDUOS/Buscar/BuscarInstalacion", backgroundImage: "../img/asturias.jpg"  },
     { title: "Cantabria", description: "En caso de que el botón 'Consultar NIMA' no funcione, presione <a href='https://siacan.cantabria.es/siacan/publico/PrepareBuscadorEmpresasGestoresView.do' target='_blank'>aquí</a>.", modalId: "modal4", iframeSrc: "https://siacan.cantabria.es/siacan/publico/PrepareBuscadorEmpresasGestoresView.do", backgroundImage: "../img/cantabria.jpg"  },
@@ -38,8 +38,7 @@ cardsData.forEach((card, index) => {
         <div class="col-md-4">
             <div class="card-flip">
                 <div class="card-flip-inner">
-                    <div class="card-front">
-                        <img data-src="${card.backgroundImage}" class="lazy img-fluid" alt="${card.title}" loading="lazy">
+                    <div class="card-front" style="background-image: url('${card.backgroundImage}');">
                         <h5 class="card-title">${card.title}</h5>
                     </div>
                     <div class="card-back">
@@ -88,30 +87,5 @@ document.addEventListener('hidden.bs.modal', (event) => {
     }
 });
 
-// Lazy load images using IntersectionObserver
-document.addEventListener('DOMContentLoaded', () => {
-    const lazyImages = document.querySelectorAll('img.lazy');
-
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src; // Replace placeholder src with actual data-src
-                    img.classList.remove('lazy');
-                    observer.unobserve(img);
-                }
-            });
-        });
-
-        lazyImages.forEach((img) => {
-            imageObserver.observe(img);
-        });
-    } else {
-        // Fallback for browsers without IntersectionObserver support
-        lazyImages.forEach((img) => {
-            img.src = img.dataset.src;
-            img.classList.remove('lazy');
-        });
     }
 });
