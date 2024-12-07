@@ -38,8 +38,7 @@ cardsData.forEach((card, index) => {
         <div class="col-md-4">
             <div class="card-flip">
                 <div class="card-flip-inner">
-                    <div class="card-front">
-                        <img data-src="${card.backgroundImage}" class="lazy img-fluid" alt="${card.title}" loading="lazy">
+                    <div class="card-front" style="background-image: url('${card.backgroundImage}');">
                         <h5 class="card-title">${card.title}</h5>
                     </div>
                     <div class="card-back">
@@ -68,30 +67,24 @@ cardsData.forEach((card, index) => {
     `;
 });
 
-// Lazy load images using IntersectionObserver
-document.addEventListener('DOMContentLoaded', () => {
-    const lazyImages = document.querySelectorAll('img.lazy');
+// Lazy load iframe when modal is opened
+document.addEventListener('shown.bs.modal', (event) => {
+    const modal = event.target;
+    const iframe = modal.querySelector('iframe');
+    if (iframe && iframe.style.display === 'none') {
+        iframe.src = iframe.getAttribute('data-src');
+        iframe.style.display = 'block';
+    }
+});
 
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src; // Replace placeholder src with actual data-src
-                    img.classList.remove('lazy');
-                    observer.unobserve(img);
-                }
-            });
-        });
-
-        lazyImages.forEach((img) => {
-            imageObserver.observe(img);
-        });
-    } else {
-        // Fallback for browsers without IntersectionObserver support
-        lazyImages.forEach((img) => {
-            img.src = img.dataset.src;
-            img.classList.remove('lazy');
-        });
+// Optionally clear iframe when modal is closed
+document.addEventListener('hidden.bs.modal', (event) => {
+    const modal = event.target;
+    const iframe = modal.querySelector('iframe');
+    if (iframe) {
+        iframe.src = '';
+        iframe.style.display = 'none';
+    }
+});
     }
 });
