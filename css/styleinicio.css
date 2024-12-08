@@ -19,15 +19,13 @@ html, body {
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
-/* Columna con tarjetas */
+/* Columnas */
 .col-md-4 {
     display: flex;
     justify-content: center;
-    flex: 1 1 calc(33.333% - 20px);
-    max-width: 300px;
 }
 
 /* Tarjetas */
