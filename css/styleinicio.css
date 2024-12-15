@@ -19,9 +19,6 @@ body a {
     width: 100%;
     padding: 20px;
     display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center;    /* Centrado vertical */
-    text-align: center;     /* Centrado del texto si es necesario */
 }
 
 /* Filas */
