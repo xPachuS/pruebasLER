@@ -1,52 +1,10 @@
 // Todas las tarjetas definidas dentro de cardsData
 const cardsData = [
     {
-        title: "Consultar NIMA",
-        description: "Aquí encontrarás las webs de las Comunidades Autónomas para consultar NIMAS.",
-        link: "./html/nima.html",
-        buttonText: "CONSULTA NIMA",
-        target: "_self"
-    },
-    {
-        title: "Consultar LER",
-        description: "Visite este enlace para consultar toda la información sobre los códigos LER.",
-        link: "./html/ler.html",
-        buttonText: "CONSULTA LER",
-        target: "_self"
-    },
-    {
-        title: "Realizar NT",
-        description: "Acceda aquí para realizar una notificación previa de traslado (NT).",
-        link: "https://sede.miteco.gob.es/portal/site/seMITECO/login",
-        buttonText: "REALIZAR NT",
-        target: "_blank"
-    },
-    {
-        title: "Realizar DI",
-        description: "Acceda aquí para realizar un documento de identificación de traslado (DI).",
-        link: "https://servicio.mapama.gob.es/esir-web-adv/",
-        buttonText: "REALIZAR DI",
-        target: "_blank"
-    },
-    {
-        title: "Comprobar CSV",
-        description: "Compruebe la veracidad de los 'Códigos Seguros de Verificación'.",
-        link: "https://sede.miteco.gob.es/portal/site/seMITECO/navValidacionCSV?accionClass=validacionCSVAction",
-        buttonText: "COMPROBAR CSV",
-        target: "_blank"
-    },
-    {
-        title: "Logística",
-        description: "Acceda aquí para información sobre Logística.",
+        title: "Calendario Guardias",
+        description: "Consulta el calendario de las guardias de 2025.",
         link: "./html/calendar.html",
-        buttonText: "CONSULTA LOGÍSTICA",
-        target: "_self"
-    },
-    {
-        title: "Pruebas",
-        description: "Página de pruebas de próximas incorporaciones (Acceso por contraseña).",
-        link: "./html/pruebas.html",
-        buttonText: "PRUEBAS",
+        buttonText: "CONSULTA CALENDARIO",
         target: "_self"
     }
 ];
