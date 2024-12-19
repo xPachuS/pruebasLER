@@ -1,0 +1,186 @@
+/*Reglas Generales*/
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+/*Botón de Volver*/
+
+.navigation {
+    text-align: center;
+}
+
+
+
+/*Reglas para el Calendario*/
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 20px;
+    padding-top: 50px;
+    width: 1180px;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.month {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.month-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+    color: #808080;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(7, 1fr);
+    text-align: center;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.day, .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    text-align: center;
+    height: 100%;
+    border: 1px solid #BFBFBF;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.week-number {
+    font-weight: bold;
+}
+
+.day.red {
+    color: red;
+    font-weight: bold;
+}
+
+.day.blue {
+    color: blue;
+    font-weight: bold;
+}
+
+
+
+/*Leyenda*/
+
+.legend {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 160px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1;
+}
+
+.legend h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+
+/* Responsividad */
+@media (max-width: 1200px) {
+    .calendar-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/*Colores asociados a cada persona*/
+
+.eva-days {
+    background-color: #FCD5B4;
+}
+
+.alberto-days {
+    background-color: #B7DEE8;
+}
+
+.beatriz-days {
+    background-color: #E6B8B7;
+}
+
+.sandra-days {
+    background-color: #CCC0DA;
+}
+
+.carolina-days {
+    background-color: #B8CCE4;
+}
+
+.raul-days {
+    background-color: #D8E4BC;
+}
+
+.eugenia-days {
+    background-color: #DDD9C4;
+}
