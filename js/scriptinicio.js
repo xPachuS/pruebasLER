@@ -36,6 +36,13 @@ const cardsData = [
         target: "_blank"
     },
     {
+        title: "Logística",
+        description: "Compruebe la veracidad de los 'Códigos Seguros de Verificación'.",
+        link: "./html/calendar.html",
+        buttonText: "COMPROBAR CSV",
+        target: "_blank"
+    },
+    {
         title: "Pruebas",
         description: "Página de pruebas de próximas incorporaciones (Acceso por contraseña).",
         link: "./html/pruebas.html",
