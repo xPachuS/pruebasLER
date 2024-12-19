@@ -38,7 +38,7 @@ const cardsData = [
     {
         title: "Logística",
         description: "Acceda aquí para información sobre Logística.",
-        link: "./html/calendar.html",
+        link: "./html/logistica.html",
         buttonText: "CONSULTA LOGÍSTICA",
         target: "_self"
     },
