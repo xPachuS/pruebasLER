@@ -37,9 +37,9 @@ const cardsData = [
     },
     {
         title: "Logística",
-        description: "Compruebe la veracidad de los 'Códigos Seguros de Verificación'.",
+        description: "Acceda aquí para información sobre Logística.",
         link: "./html/calendar.html",
-        buttonText: "COMPROBAR CSV",
+        buttonText: "CONSULTA LOGÍSTICA",
         target: "_blank"
     },
     {
