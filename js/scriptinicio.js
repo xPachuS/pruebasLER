@@ -40,7 +40,7 @@ const cardsData = [
         description: "Acceda aquí para información sobre Logística.",
         link: "./html/calendar.html",
         buttonText: "CONSULTA LOGÍSTICA",
-        target: "_blank"
+        target: "_self"
     },
     {
         title: "Pruebas",
