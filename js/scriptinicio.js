@@ -36,10 +36,10 @@ const cardsData = [
         target: "_blank"
     },
     {
-        title: "Logística",
-        description: "Acceda aquí para información sobre Logística.",
-        link: "./html/logistica.html",
-        buttonText: "CONSULTA LOGÍSTICA",
+        title: "Calendario",
+        description: "Acceda aquí para consultar el calendario de guardias de 2025.",
+        link: "./html/calendar.html",
+        buttonText: "CONSULTA CALENDARIO",
         target: "_self"
     },
     {
